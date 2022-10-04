@@ -8,8 +8,8 @@ def pin_to_ipfs(data):
 	json_string = json.dumps(data)
 	# infura_url = "https://api.pinata.cloud/ipfs/"
 
-	project_id = '582e947d3d224196bb08eb926aa5eda2'
-	project_secret = '08690b856b994718a9ecbb5d219050ce'
+	project_id = '2FeGjmTGzI5aPZ1hqGGcmWbFbsU'
+	project_secret = '1324c778cf5eb87efb37dca236472b1c'
 
 	print(project_id)
 	print(project_secret)
