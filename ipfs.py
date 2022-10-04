@@ -19,13 +19,13 @@ def pin_to_ipfs(data):
 	print(project_id)
 	print(project_secret)
 
-	response = requests.post('https://ipfs.infura.io:5001/api/v0/add', json = {'path': 'data.json'},
+	response = requests.post('https://ipfs.infura.io:5001/api/v0/add', files = {'file': '@"data.json"'},
 							 auth=(project_id, project_secret))
 
 
-	result = response.text
-	cid = result
-	print(result)
+	result = response.json()
+	cid = result.get("Hash")
+	print(cid)
 	return cid
 
 
