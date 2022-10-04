@@ -10,6 +10,8 @@ def pin_to_ipfs(data):
 
     project_id = '582e947d3d224196bb08eb926aa5eda2'
     project_secret = '08690b856b994718a9ecbb5d219050ce'
+	print(project_id)
+	print(project_secret)
 
     response = requests.post('https://ipfs.infura.io:5001/api/v0/add', json=json_string,
                              auth=(project_id, project_secret))
