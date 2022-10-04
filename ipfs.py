@@ -7,8 +7,8 @@ def pin_to_ipfs(data):
 	# YOUR CODE HERE
 	print(data)
 
-	#with open('data.json', 'w') as f:
-	#	json.dump(data,f)
+	with open('data.json', 'w') as f:
+		json.dump(data,f)
 
 
 	# infura_url = "https://api.pinata.cloud/ipfs/"
@@ -19,7 +19,7 @@ def pin_to_ipfs(data):
 	print(project_id)
 	print(project_secret)
 
-	response = requests.post('https://ipfs.infura.io:5001/api/v0/add', files = data,
+	response = requests.post('https://ipfs.infura.io:5001/api/v0/add', json = {'path': 'data.json'},
 							 auth=(project_id, project_secret))
 
 
