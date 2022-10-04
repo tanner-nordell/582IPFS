@@ -11,8 +11,6 @@ def pin_to_ipfs(data):
 		json.dump(data,f)
 
 
-	# infura_url = "https://api.pinata.cloud/ipfs/"
-
 	project_id = '2FeGjmTGzI5aPZ1hqGGcmWbFbsU'
 	project_secret = '1324c778cf5eb87efb37dca236472b1c'
 
@@ -32,8 +30,10 @@ def pin_to_ipfs(data):
 def get_from_ipfs(cid, content_type="json"):
 	assert isinstance(cid, str), f"get_from_ipfs accepts a cid in the form of a string"
 	# YOUR CODE HERE
-
-	# use cat
+	project_id = '2FeGjmTGzI5aPZ1hqGGcmWbFbsU'
+	project_secret = '1324c778cf5eb87efb37dca236472b1c'
+	response = requests.post(f'https://ipfs.infura.io:5001/api/v0/cat?arg={cid}', auth=(project_id, project_secret))
+	data = response.json()
 
 	assert isinstance(data, dict), f"get_from_ipfs should return a dict"
 	return data
