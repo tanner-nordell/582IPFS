@@ -5,7 +5,7 @@ import json
 def pin_to_ipfs(data):
 	assert isinstance(data, dict), f"Error pin_to_ipfs expects a dictionary"
 	# YOUR CODE HERE
-
+	print(data)
 
 	#with open('data.json', 'w') as f:
 	#	json.dump(data,f)
